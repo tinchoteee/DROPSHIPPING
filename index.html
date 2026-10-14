@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PeloCero — Adiós a los pelos de mascota</title>
+<meta name="description" content="Rodillo reutilizable que quita pelos de perro y gato de sillones, camas y ropa. Sin repuestos, sin pilas. Pagás al recibir.">
+<style>
+  :root{
+    --bg:#fffaf5; --fg:#1f1b16; --muted:#6b6259; --card:#ffffff;
+    --accent:#ff6b2c; --accent-fg:#ffffff; --line:#eadfd3; --ok:#1f9d55;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#16130f; --fg:#f5efe8; --muted:#b3a89c; --card:#211c17; --line:#3a322a; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+  .bar{background:var(--accent);color:var(--accent-fg);text-align:center;font-size:14px;padding:8px 16px;font-weight:600}
+  header{padding:16px 0;border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-weight:800;font-size:22px;letter-spacing:-.5px}
+  .logo span{color:var(--accent)}
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:48px 0}
+  .hero h1{font-size:clamp(30px,5vw,48px);line-height:1.1;margin:0 0 16px;letter-spacing:-1px}
+  .hero p{color:var(--muted);font-size:18px;margin:0 0 24px}
+  .media{aspect-ratio:1/1;border-radius:20px;background:linear-gradient(135deg,#ffd9c4,#ffb48f);display:grid;place-items:center;font-size:120px}
+  .price{display:flex;gap:12px;align-items:baseline;margin-bottom:20px}
+  .price .now{font-size:34px;font-weight:800}
+  .price .old{color:var(--muted);text-decoration:line-through}
+  .price .off{background:var(--ok);color:#fff;font-size:13px;font-weight:700;padding:3px 8px;border-radius:999px}
+  .btn{display:inline-block;background:var(--accent);color:var(--accent-fg);font-weight:700;font-size:18px;padding:16px 28px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;width:100%;text-align:center}
+  .btn:hover{filter:brightness(1.05)}
+  .trust{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:16px;color:var(--muted);font-size:14px}
+  section{padding:48px 0;border-top:1px solid var(--line)}
+  h2{font-size:30px;margin:0 0 24px;letter-spacing:-.5px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .card b{display:block;font-size:18px;margin-bottom:6px}
+  .card p{margin:0;color:var(--muted)}
+  .step{font-size:32px}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:10px}
+  summary{font-weight:700;cursor:pointer}
+  details p{color:var(--muted);margin:10px 0 0}
+  form{display:grid;gap:12px;max-width:520px}
+  input,select{font:inherit;padding:14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
+  footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px;background:var(--bg);border-top:1px solid var(--line);display:none}
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr;padding:24px 0;gap:24px}
+    .grid{grid-template-columns:1fr}
+    .sticky{display:block}
+    body{padding-bottom:80px}
+  }
+</style>
+</head>
+<body>
+<div class="bar">🚚 Envío gratis a todo el país · Pagás cuando lo recibís</div>
+<header><div class="wrap"><div class="logo">Pelo<span>Cero</span></div><a href="#pedido">Comprar</a></div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="media" role="img" aria-label="Foto del producto (reemplazar por foto o video real)">🐾</div>
+    <div>
+      <h1>Sacá todos los pelos del sillón en 10 segundos.</h1>
+      <p>El rodillo reutilizable que levanta pelo de perro y gato de sillones, camas, alfombras y ropa. Sin cintas adhesivas, sin pilas y sin repuestos.</p>
+      <div class="price">
+        <span class="now" id="precio">$ 24.990</span>
+        <span class="old">$ 39.990</span>
+        <span class="off">-37%</span>
+      </div>
+      <a class="btn" href="#pedido">Quiero el mío — pago al recibir</a>
+      <div class="trust"><span>✅ Garantía de 30 días</span><span>📦 Llega en 2 a 5 días hábiles</span><span>💬 Atención por WhatsApp</span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>¿Por qué funciona?</h2>
+    <div class="grid">
+      <div class="card"><b>Se limpia solo</b><p>Abrís la tapa y el pelo queda juntado en el depósito. Lo tirás y listo.</p></div>
+      <div class="card"><b>Para siempre</b><p>No usa cinta ni repuestos. Ahorrás plata con cada uso.</p></div>
+      <div class="card"><b>Cualquier tela</b><p>Sillones, acolchados, alfombras, asientos del auto y ropa.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Así de fácil</h2>
+    <div class="grid">
+      <div class="card"><div class="step">1️⃣</div><b>Pasalo</b><p>Movelo hacia adelante y atrás sobre la tela.</p></div>
+      <div class="card"><div class="step">2️⃣</div><b>Abrí</b><p>Apretás el botón y se abre el depósito.</p></div>
+      <div class="card"><div class="step">3️⃣</div><b>Vaciá</b><p>Tirás el pelo a la basura. Listo para usar de nuevo.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Cómo pago?</summary><p>En efectivo cuando el correo te lo entrega. No pagás nada por adelantado.</p></details>
+    <details><summary>¿Cuánto tarda?</summary><p>Entre 2 y 5 días hábiles en ciudades grandes. En el interior puede tardar un poco más.</p></details>
+    <details><summary>¿Y si no me sirve?</summary><p>Tenés 30 días para devolverlo. Escribinos por WhatsApp y lo resolvemos.</p></details>
+    <details><summary>¿Sirve para pelo largo?</summary><p>Sí, funciona con pelo corto y largo de perros y gatos.</p></details>
+  </section>
+
+  <section id="pedido">
+    <h2>Hacé tu pedido</h2>
+    <form id="form">
+      <input name="nombre" placeholder="Nombre y apellido" required autocomplete="name">
+      <input name="telefono" placeholder="WhatsApp (ej: 11 2345 6789)" required inputmode="tel" autocomplete="tel">
+      <input name="direccion" placeholder="Calle, número, piso/depto" required autocomplete="street-address">
+      <input name="ciudad" placeholder="Ciudad y provincia" required>
+      <select name="cantidad" id="cantidad">
+        <option value="1">1 unidad — $ 24.990</option>
+        <option value="2">2 unidades — $ 39.990 (ahorrás $ 9.990)</option>
+      </select>
+      <button class="btn" type="submit">Confirmar pedido por WhatsApp</button>
+      <small style="color:var(--muted)">Te escribimos para confirmar la dirección antes de enviarlo.</small>
+    </form>
+  </section>
+</main>
+
+<footer><div class="wrap">© PeloCero · Defensa del consumidor · Términos y condiciones · Política de devoluciones</div></footer>
+<div class="sticky"><a class="btn" href="#pedido">Comprar — pago al recibir</a></div>
+
+<script>
+  // Reemplazá por tu número de WhatsApp con código de país, sin "+" ni espacios.
+  const WHATSAPP = "5491100000000";
+  document.getElementById("form").addEventListener("submit", e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(e.target));
+    const msg = `¡Hola! Quiero hacer un pedido de PeloCero:%0A` +
+      `• Cantidad: ${d.cantidad}%0A• Nombre: ${encodeURIComponent(d.nombre)}%0A` +
+      `• Tel: ${encodeURIComponent(d.telefono)}%0A• Dirección: ${encodeURIComponent(d.direccion)}%0A` +
+      `• Ciudad: ${encodeURIComponent(d.ciudad)}`;
+    window.open(`https://wa.me/${WHATSAPP}?text=${msg}`, "_blank");
+  });
+</script>
+</body>
+</html>
