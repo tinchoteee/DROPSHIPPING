@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PisáBien · Plantillas de soporte para pies cansados</title>
+<meta name="description" content="Plantillas con soporte de arco y talón amortiguado para caminar todo el día con más comodidad. Envío gratis y pagás cuando lo recibís.">
+<style>
+  :root{
+    --bg:#f7f9f8; --fg:#14211c; --muted:#5d6b66; --card:#ffffff;
+    --accent:#0f8a5f; --accent-fg:#ffffff; --hot:#e8552d; --line:#dfe7e3; --soft:#e6f4ee;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0f1714; --fg:#eef5f2; --muted:#9fb1aa; --card:#17221e; --line:#2a3832; --soft:#173027; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+  .bar{background:var(--fg);color:var(--bg);text-align:center;font-size:14px;padding:8px 16px;font-weight:600}
+  header{padding:14px 0;border-bottom:1px solid var(--line);background:var(--card)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-weight:800;font-size:22px;letter-spacing:-.5px}
+  .logo span{color:var(--accent)}
+  header a{color:var(--accent);font-weight:700;text-decoration:none}
+  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:40px 0}
+  .media{border-radius:20px;background:var(--soft);aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden;position:relative}
+  .media small{position:absolute;bottom:10px;left:0;right:0;text-align:center;color:var(--muted);font-size:12px}
+  .kicker{color:var(--hot);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
+  .hero h1{font-size:clamp(30px,5vw,46px);line-height:1.08;margin:6px 0 14px;letter-spacing:-1px}
+  .hero p{color:var(--muted);font-size:18px;margin:0 0 18px}
+  ul.checks{list-style:none;padding:0;margin:0 0 20px}
+  ul.checks li{padding:4px 0}
+  ul.checks li::before{content:"✓";color:var(--accent);font-weight:800;margin-right:8px}
+  .price{display:flex;gap:12px;align-items:baseline;margin-bottom:16px;flex-wrap:wrap}
+  .price .now{font-size:34px;font-weight:800}
+  .price .old{color:var(--muted);text-decoration:line-through}
+  .price .off{background:var(--hot);color:#fff;font-size:13px;font-weight:700;padding:3px 8px;border-radius:999px}
+  .btn{display:block;background:var(--accent);color:var(--accent-fg);font-weight:800;font-size:18px;padding:16px 24px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;width:100%;text-align:center}
+  .btn:hover{filter:brightness(1.07)}
+  .trust{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;color:var(--muted);font-size:14px}
+  section{padding:48px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(24px,4vw,32px);margin:0 0 20px;letter-spacing:-.5px}
+  .lead{color:var(--muted);font-size:17px;max-width:720px;margin:-8px 0 24px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .card b{display:block;font-size:18px;margin-bottom:6px}
+  .card p{margin:0;color:var(--muted)}
+  .ico{font-size:30px;margin-bottom:8px}
+  .pains{display:flex;flex-wrap:wrap;gap:10px}
+  .pains span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:600}
+  .packs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+  .pack{position:relative;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:16px 12px;text-align:center;cursor:pointer}
+  .pack input{position:absolute;opacity:0}
+  .pack:has(input:checked){border-color:var(--accent);background:var(--soft)}
+  .pack b{display:block;font-size:16px}
+  .pack .p{font-size:22px;font-weight:800;margin:4px 0}
+  .pack .s{font-size:13px;color:var(--muted)}
+  .tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--hot);color:#fff;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap}
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden}
+  th,td{padding:10px;border-bottom:1px solid var(--line);text-align:center}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:10px}
+  summary{font-weight:700;cursor:pointer}
+  details p{color:var(--muted);margin:10px 0 0}
+  form{display:grid;gap:12px;max-width:560px}
+  input[type=text],input[type=tel],select{font:inherit;padding:14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);width:100%}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .total{font-size:20px;font-weight:800}
+  .note{color:var(--muted);font-size:13px}
+  footer{padding:32px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  footer a{color:inherit}
+  .regret{display:inline-block;margin-top:10px;border:1px solid var(--line);padding:8px 12px;border-radius:8px;text-decoration:none}
+  .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px;background:var(--bg);border-top:1px solid var(--line);display:none;z-index:5}
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr;padding:20px 0;gap:20px}
+    .grid{grid-template-columns:1fr}
+    .packs{gap:8px}
+    .pack{padding:14px 6px}
+    .pack .p{font-size:18px}
+    .row{grid-template-columns:1fr}
+    .sticky{display:block}
+    body{padding-bottom:80px}
+  }
+</style>
+</head>
+<body>
+<div class="bar">🚚 Envío gratis · 💵 Pagás cuando lo recibís · 🔁 30 días para devolverlo</div>
+<header><div class="wrap"><div class="logo">Pisá<span>Bien</span></div><a href="#pedido">Comprar</a></div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="media" role="img" aria-label="Plantilla PisáBien (reemplazar por foto o video real)">
+      <svg viewBox="0 0 200 200" width="78%" aria-hidden="true">
+        <path d="M100 18c30 0 44 26 44 58 0 26-8 40-8 62 0 22-14 44-36 44s-34-20-34-42c0-24 6-36 6-62 0-34 0-60 28-60z" fill="var(--accent)" opacity=".9"/>
+        <path d="M86 70c10-6 26-6 34 4M80 108c14 8 34 8 46 0" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+        <circle cx="102" cy="150" r="16" fill="#fff" opacity=".35"/>
+      </svg>
+      <small>Foto de referencia: reemplazar por la foto real del proveedor</small>
+    </div>
+    <div>
+      <div class="kicker">Para los que pasan el día de pie</div>
+      <h1>Llegá a la noche sin los pies destrozados.</h1>
+      <p>Plantillas con soporte de arco y talón amortiguado. Las ponés en tus zapatillas o zapatos de siempre y caminás con otra comodidad desde el primer día.</p>
+      <ul class="checks">
+        <li>Soporte firme para el arco del pie</li>
+        <li>Taloneras de gel que amortiguan cada paso</li>
+        <li>Se recortan a tu medida con una tijera</li>
+      </ul>
+      <div class="price">
+        <span class="now">$ 29.999</span>
+        <span class="old">$ 44.999</span>
+        <span class="off">-33%</span>
+      </div>
+      <a class="btn" href="#pedido">Quiero las mías · pago al recibir</a>
+      <div class="trust"><span>✅ 30 días de garantía</span><span>📦 Llega en 2 a 5 días hábiles</span><span>💬 Te confirmamos por WhatsApp</span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>¿Te pasa alguna de estas?</h2>
+    <div class="pains">
+      <span>😣 Dolor de talón al levantarte</span>
+      <span>🦶 Pie plano o arco caído</span>
+      <span>🧍 Muchas horas parado/a en el trabajo</span>
+      <span>🚶 Caminás mucho y terminás molido/a</span>
+      <span>👟 Zapatos lindos pero incómodos</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Por qué se sienten distinto</h2>
+    <div class="grid">
+      <div class="card"><div class="ico">🏔️</div><b>Arco que sostiene</b><p>El soporte central reparte el peso en toda la planta en vez de cargarlo todo en el talón.</p></div>
+      <div class="card"><div class="ico">💧</div><b>Talón con gel</b><p>Absorbe el golpe de cada pisada. Lo notás sobre todo en veredas y pisos duros.</p></div>
+      <div class="card"><div class="ico">✂️</div><b>A tu medida</b><p>Vienen con marcas de talle. Recortás por la línea y entran en zapatillas, botas o zapatos.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Así de fácil</h2>
+    <div class="grid">
+      <div class="card"><b>1. Recortá</b><p>Elegí la línea de tu talle y cortá con una tijera común.</p></div>
+      <div class="card"><b>2. Ponelas</b><p>Sacá la plantilla vieja de tu calzado y poné la nueva.</p></div>
+      <div class="card"><b>3. Caminá</b><p>Usalas de a poco los primeros días hasta que tu pie se acostumbre.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Guía de talles</h2>
+    <table>
+      <tr><th>Talle</th><th>Calzado</th></tr>
+      <tr><td>S</td><td>35 a 38</td></tr>
+      <tr><td>M</td><td>39 a 42</td></tr>
+      <tr><td>L</td><td>43 a 46</td></tr>
+    </table>
+    <p class="note">Si estás entre dos talles, elegí el más grande y recortá.</p>
+  </section>
+
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Cómo pago?</summary><p>En efectivo cuando el correo te lo entrega. No pagás nada por adelantado.</p></details>
+    <details><summary>¿Cuánto tarda?</summary><p>De 2 a 3 días hábiles en CABA y GBA, y de 5 a 7 días hábiles en el resto del país.</p></details>
+    <details><summary>¿Y si no me sirven?</summary><p>Tenés 30 días desde que las recibís. Escribinos por WhatsApp y te devolvemos la plata.</p></details>
+    <details><summary>¿Reemplazan una plantilla hecha por un médico?</summary><p>No. Son plantillas de confort para el día a día. Si tenés un dolor fuerte o que no se va, consultá con un profesional.</p></details>
+    <details><summary>¿Las puedo usar en cualquier calzado?</summary><p>Sí, en zapatillas, zapatos cerrados y botas. En sandalias abiertas no.</p></details>
+  </section>
+
+  <section id="pedido">
+    <h2>Hacé tu pedido</h2>
+    <form id="form">
+      <div class="packs">
+        <label class="pack"><input type="radio" name="pack" value="1" data-precio="29999"><b>1 par</b><div class="p">$ 29.999</div><div class="s">Para probar</div></label>
+        <label class="pack"><span class="tag">MÁS ELEGIDO</span><input type="radio" name="pack" value="2" data-precio="44999" checked><b>2 pares</b><div class="p">$ 44.999</div><div class="s">$ 22.500 c/u</div></label>
+        <label class="pack"><input type="radio" name="pack" value="3" data-precio="56999"><b>3 pares</b><div class="p">$ 56.999</div><div class="s">$ 19.000 c/u</div></label>
+      </div>
+      <select name="talle" required>
+        <option value="">Elegí tu talle</option>
+        <option>S (35 a 38)</option><option>M (39 a 42)</option><option>L (43 a 46)</option>
+      </select>
+      <input type="text" name="nombre" placeholder="Nombre y apellido" required autocomplete="name">
+      <input type="tel" name="telefono" placeholder="WhatsApp (ej: 11 2345 6789)" required autocomplete="tel">
+      <input type="text" name="direccion" placeholder="Calle, número, piso/depto" required autocomplete="street-address">
+      <div class="row">
+        <input type="text" name="ciudad" placeholder="Localidad" required>
+        <input type="text" name="provincia" placeholder="Provincia" required>
+      </div>
+      <div class="total">Total: <span id="total">$ 44.999</span> · envío gratis</div>
+      <button class="btn" type="submit">Confirmar pedido · pago al recibir</button>
+      <span class="note">Te escribimos por WhatsApp para confirmar la dirección antes de despacharlo.</span>
+    </form>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  © PisáBien · <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor" target="_blank" rel="noopener">Defensa de las y los consumidores</a> · Términos y condiciones · Política de devoluciones<br>
+  <a class="regret" id="arrepentimiento" href="#">Botón de arrepentimiento</a>
+</div></footer>
+<div class="sticky"><a class="btn" href="#pedido">Comprar · pago al recibir</a></div>
+
+<script>
+  // Número de WhatsApp del negocio, con código de país y sin "+" ni espacios. PENDIENTE: cargar el real.
+  const WHATSAPP = "5491100000000";
+  const fmt = n => "$ " + n.toLocaleString("es-AR");
+  const form = document.getElementById("form");
+  const total = document.getElementById("total");
+  form.addEventListener("change", () => {
+    total.textContent = fmt(+form.querySelector("input[name=pack]:checked").dataset.precio);
+  });
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(form));
+    const precio = form.querySelector("input[name=pack]:checked").dataset.precio;
+    const msg = [
+      "¡Hola! Quiero hacer un pedido de PisáBien:",
+      `• ${d.pack} par(es), talle ${d.talle}: ${fmt(+precio)}`,
+      `• Nombre: ${d.nombre}`, `• Tel: ${d.telefono}`,
+      `• Dirección: ${d.direccion}, ${d.ciudad}, ${d.provincia}`,
+      "Pago al recibir."
+    ].join("\n");
+    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
+  });
+  document.getElementById("arrepentimiento").addEventListener("click", e => {
+    e.preventDefault();
+    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hola, quiero arrepentirme de mi compra. Mi nombre es:")}`, "_blank");
+  });
+</script>
+</body>
+</html>
