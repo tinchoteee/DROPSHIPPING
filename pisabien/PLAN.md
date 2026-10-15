@@ -19,10 +19,12 @@ Esto es un candidato muy fuerte, no una garantía: se valida con ventas propias.
 | Concepto | 1 par | 2 pares (oferta principal) |
 |---|---|---|
 | Precio de venta | $ 29.999 | $ 44.999 |
-| Producto + envío (proveedor Dropi, estimado) | $ 10.000 | $ 15.000 |
+| Producto (Dropi, Ventmar, ID 7625: $ 9.500 el par) + envío (estimado $ 6.000) | $ 15.500 | $ 25.000 |
 | Publicidad por venta (CPA estimado) | $ 9.000 | $ 9.000 |
 | Devoluciones y rechazos del contraentrega (~20 %) | $ 6.000 | $ 9.000 |
-| **Ganancia estimada** | **~$ 5.000** | **~$ 12.000** |
+| **Ganancia estimada** | **~$ 0** | **~$ 2.000** |
+
+Con el costo real de Dropi, el margen es finito: la oferta de 2 pares apenas gana y 1 par queda en cero si el CPA es $ 9.000. Para que deje plata hay que lograr un CPA de $ 6.000 o menos, o subir la oferta principal a 2 pares por $ 49.999. Confirmá el costo del envío con Dropi, que es el número que más mueve la cuenta.
 
 La oferta de 2 pares es la que deja plata: empujala como "la más elegida".
 
