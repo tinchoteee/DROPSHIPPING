@@ -99,11 +99,11 @@
     <div>
       <div class="kicker">Para los que pasan el día de pie</div>
       <h1>Llegá a la noche sin los pies destrozados.</h1>
-      <p>Plantillas con soporte de arco y talón amortiguado. Las ponés en tus zapatillas o zapatos de siempre y caminás con otra comodidad desde el primer día.</p>
+      <p>Plantillas de gel con talón amortiguado. Las ponés en tus zapatillas o zapatos de siempre y caminás con otra comodidad desde el primer día.</p>
       <ul class="checks">
-        <li>Soporte firme para el arco del pie</li>
-        <li>Taloneras de gel que amortiguan cada paso</li>
-        <li>Se recortan a tu medida con una tijera</li>
+        <li>Soporte en el talón y en toda la planta</li>
+        <li>Gel que amortigua cada paso</li>
+        <li>Del talle 35 al 45, y se recortan si hace falta</li>
       </ul>
       <div class="price">
         <span class="now">$ 29.999</span>
@@ -129,16 +129,16 @@
   <section>
     <h2>Por qué se sienten distinto</h2>
     <div class="grid">
-      <div class="card"><div class="ico">🏔️</div><b>Arco que sostiene</b><p>El soporte central reparte el peso en toda la planta en vez de cargarlo todo en el talón.</p></div>
+      <div class="card"><div class="ico">🏔️</div><b>Menos presión en la planta</b><p>El gel se adapta a tu pisada y reparte el peso en vez de cargarlo todo en el talón.</p></div>
       <div class="card"><div class="ico">💧</div><b>Talón con gel</b><p>Absorbe el golpe de cada pisada. Lo notás sobre todo en veredas y pisos duros.</p></div>
-      <div class="card"><div class="ico">✂️</div><b>A tu medida</b><p>Vienen con marcas de talle. Recortás por la línea y entran en zapatillas, botas o zapatos.</p></div>
+      <div class="card"><div class="ico">✂️</div><b>A tu medida</b><p>Vienen por talle y se pueden recortar para que entren justo en zapatillas, botas o zapatos.</p></div>
     </div>
   </section>
 
   <section>
     <h2>Así de fácil</h2>
     <div class="grid">
-      <div class="card"><b>1. Recortá</b><p>Elegí la línea de tu talle y cortá con una tijera común.</p></div>
+      <div class="card"><b>1. Probá</b><p>Ponela al lado de tu plantilla vieja. Si sobra en la punta, recortá con una tijera.</p></div>
       <div class="card"><b>2. Ponelas</b><p>Sacá la plantilla vieja de tu calzado y poné la nueva.</p></div>
       <div class="card"><b>3. Caminá</b><p>Usalas de a poco los primeros días hasta que tu pie se acostumbre.</p></div>
     </div>
@@ -146,13 +146,7 @@
 
   <section>
     <h2>Guía de talles</h2>
-    <table>
-      <tr><th>Talle</th><th>Calzado</th></tr>
-      <tr><td>S</td><td>35 a 38</td></tr>
-      <tr><td>M</td><td>39 a 42</td></tr>
-      <tr><td>L</td><td>43 a 46</td></tr>
-    </table>
-    <p class="note">Si estás entre dos talles, elegí el más grande y recortá.</p>
+    <p class="lead">Hay del 35 al 45. Elegí el mismo talle que tu calzado. Si te queda justa en la punta, la recortás con una tijera.</p>
   </section>
 
   <section>
@@ -173,8 +167,9 @@
         <label class="pack"><input type="radio" name="pack" value="3" data-precio="56999"><b>3 pares</b><div class="p">$ 56.999</div><div class="s">$ 19.000 c/u</div></label>
       </div>
       <select name="talle" required>
-        <option value="">Elegí tu talle</option>
-        <option>S (35 a 38)</option><option>M (39 a 42)</option><option>L (43 a 46)</option>
+        <option value="">Elegí tu talle de calzado</option>
+        <option>35</option><option>36</option><option>37</option><option>38</option><option>39</option><option>40</option>
+        <option>41</option><option>42</option><option>43</option><option>44</option><option>45</option>
       </select>
       <input type="text" name="nombre" placeholder="Nombre y apellido" required autocomplete="name">
       <input type="tel" name="telefono" placeholder="WhatsApp (ej: 11 2345 6789)" required autocomplete="tel">
@@ -197,8 +192,8 @@
 <div class="sticky"><a class="btn" href="#pedido">Comprar · pago al recibir</a></div>
 
 <script>
-  // Número de WhatsApp del negocio, con código de país y sin "+" ni espacios. PENDIENTE: cargar el real.
-  const WHATSAPP = "5491100000000";
+  // Número de WhatsApp del negocio, con código de país y sin "+" ni espacios.
+  const WHATSAPP = "5491169490396";
   const fmt = n => "$ " + n.toLocaleString("es-AR");
   const form = document.getElementById("form");
   const total = document.getElementById("total");
