@@ -1,0 +1,82 @@
+<!--
+  PisáBien: secciones de venta para la página del producto en Shopify.
+  Dónde va: Tienda online > Temas > Personalizar > Plantilla de producto >
+  "Agregar sección" > "Liquid personalizado" (Custom Liquid). Pegá todo este archivo ahí,
+  debajo de la sección "Información del producto".
+-->
+<style>
+  .pb{--pb-verde:#0f8a5f;--pb-suave:#eef7f2;max-width:1100px;margin:0 auto;padding:0 16px;font-size:16px;line-height:1.5}
+  .pb h2{font-size:clamp(24px,4vw,32px);margin:48px 0 16px;letter-spacing:-.5px}
+  .pb-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:var(--pb-suave);border-radius:16px;padding:20px;margin-top:32px}
+  .pb-strip b{display:block}.pb-strip span{opacity:.75;font-size:14px}
+  .pb-pains{display:flex;flex-wrap:wrap;gap:8px}
+  .pb-pains span{background:var(--pb-suave);border-radius:999px;padding:8px 14px}
+  .pb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pb-card{border:1px solid rgba(0,0,0,.1);border-radius:16px;padding:20px}
+  .pb-card b{display:block;font-size:18px;margin-bottom:6px}.pb-card p{margin:0;opacity:.8}
+  .pb-num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--pb-verde);color:#fff;font-weight:700;margin-bottom:8px}
+  .pb-garantia{display:flex;gap:20px;align-items:center;background:var(--pb-suave);border-radius:16px;padding:24px;margin-top:48px}
+  .pb-sello{flex:none;width:90px;height:90px;border-radius:50%;background:var(--pb-verde);color:#fff;display:grid;place-items:center;font-size:30px;font-weight:800;line-height:1;text-align:center}
+  .pb-sello small{display:block;font-size:12px}
+  .pb-garantia h2{margin:0 0 6px}
+  .pb details{border:1px solid rgba(0,0,0,.1);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+  .pb summary{font-weight:700;cursor:pointer}.pb details p{margin:10px 0 0;opacity:.8}
+  @media (max-width:750px){.pb-strip{grid-template-columns:1fr 1fr}.pb-grid{grid-template-columns:1fr}.pb-garantia{flex-direction:column;text-align:center}}
+</style>
+
+<div class="pb">
+  <div class="pb-strip">
+    <div><b>🚚 Envío gratis</b><span>A todo el país</span></div>
+    <div><b>💵 Pagás al recibir</b><span>En efectivo, al cartero</span></div>
+    <div><b>🔁 30 días</b><span>Para devolverlo</span></div>
+    <div><b>💬 WhatsApp</b><span>Te atiende una persona</span></div>
+  </div>
+
+  <h2>¿Te pasa alguna de estas?</h2>
+  <div class="pb-pains">
+    <span>😣 Te duele el talón al final del día</span>
+    <span>🧍 Trabajás muchas horas de pie</span>
+    <span>🚶 Caminás mucho y terminás molido/a</span>
+    <span>👟 Tus zapatillas ya no amortiguan</span>
+    <span>👞 Zapatos de trabajo duros</span>
+  </div>
+  <p>La plantilla que trae el calzado es una lámina finita de espuma que se aplasta en pocas semanas. PisáBien suma una capa de gel justo donde más pegás contra el piso.</p>
+
+  <h2>Gel donde más lo necesitás</h2>
+  <div class="pb-grid">
+    <div class="pb-card"><b>💧 Talón amortiguado</b><p>Absorbe el golpe de cada pisada, sobre todo en veredas, cerámica y escaleras.</p></div>
+    <div class="pb-card"><b>🦶 Planta acolchada</b><p>Reparte el peso en toda la planta en vez de cargarlo en un solo punto.</p></div>
+    <div class="pb-card"><b>🌬️ Liviana y flexible</b><p>Casi no ocupa lugar: entra en el calzado que ya usás.</p></div>
+  </div>
+
+  <h2>Lista en 1 minuto</h2>
+  <div class="pb-grid">
+    <div class="pb-card"><span class="pb-num">1</span><b>Sacá la plantilla vieja</b><p>De tu zapatilla o zapato.</p></div>
+    <div class="pb-card"><span class="pb-num">2</span><b>Compará y recortá</b><p>Si sobra en la punta, recortá por la línea con una tijera común.</p></div>
+    <div class="pb-card"><span class="pb-num">3</span><b>Ponela y caminá</b><p>Los primeros días usala de a ratos hasta que el pie se acostumbre.</p></div>
+  </div>
+
+  <h2>Así recibís tu pedido</h2>
+  <div class="pb-grid">
+    <div class="pb-card"><span class="pb-num">1</span><b>Hacés el pedido</b><p>Completás tus datos. No pagás nada ahora.</p></div>
+    <div class="pb-card"><span class="pb-num">2</span><b>Te confirmamos</b><p>Te escribimos por WhatsApp para confirmar dirección y talle.</p></div>
+    <div class="pb-card"><span class="pb-num">3</span><b>Pagás al recibir</b><p>Llega en 2 a 3 días hábiles a CABA y GBA, y en 5 a 7 al resto del país.</p></div>
+  </div>
+
+  <div class="pb-garantia">
+    <div class="pb-sello">30<small>DÍAS</small></div>
+    <div>
+      <h2>Probalas sin riesgo</h2>
+      <p>Si no te convencen, tenés 30 días desde que las recibís para devolverlas. Nos escribís por WhatsApp y te devolvemos la plata.</p>
+    </div>
+  </div>
+
+  <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Cómo pago?</summary><p>En efectivo cuando el correo te lo entrega. No pagás nada por adelantado.</p></details>
+  <details><summary>¿Cuánto tarda en llegar?</summary><p>Despachamos en 24 a 48 h hábiles. Llega en 2 a 3 días hábiles a CABA y GBA, y en 5 a 7 al resto del país.</p></details>
+  <details><summary>¿Qué talle elijo?</summary><p>El mismo que usás de calzado. Vienen del 35 al 45. Si te queda justa en la punta, la recortás por las líneas marcadas.</p></details>
+  <details><summary>¿Puedo pedir talles distintos en el pack?</summary><p>Sí. Elegí un talle al comprar y cuando te escribimos para confirmar nos decís los talles de cada par.</p></details>
+  <details><summary>¿Y si no me sirven?</summary><p>Tenés 30 días desde que las recibís. También podés usar el botón de arrepentimiento al pie de la página.</p></details>
+  <details><summary>¿Reemplazan una plantilla hecha por un médico?</summary><p>No. Son plantillas de confort para el día a día. Si tenés un dolor fuerte o que no se va, consultá con un profesional.</p></details>
+  <details><summary>¿Las puedo usar en cualquier calzado?</summary><p>Sí, en zapatillas, zapatos cerrados y botas. En sandalias abiertas no.</p></details>
+</div>

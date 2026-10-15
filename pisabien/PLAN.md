@@ -65,6 +65,6 @@ Grabá con el celular, en vertical, de 15 a 30 segundos. Lo que más vende en es
 2. **Dropi:** creá la cuenta, buscá el producto y pasame el costo real para ajustar precios.
 3. **Muestra:** pedí 1 o 2 pares para probarlos y grabar los videos.
 4. **Fotos:** con la muestra, sacá fotos y las pongo en la página.
-5. **Publicar la página:** con tu OK la subo gratis a Vercel, como hicimos con Nací Reina, y te ayudo a comprar un dominio (pisabien.com.ar o similar, unos $ 10.000 al año en NIC Argentina).
+5. **Publicar la tienda en Shopify:** seguí `shopify/GUIA-SHOPIFY.md` (producto, formulario de pago contra entrega, Dropi, páginas legales y dominio pisabien.com.ar, unos $ 10.000 al año en NIC Argentina).
 6. **Página de Facebook e Instagram** de la marca, en un portfolio separado del de Nací Reina.
 7. **Monotributo** para facturar, si todavía no lo tenés para esta actividad.
