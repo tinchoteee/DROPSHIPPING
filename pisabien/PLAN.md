@@ -27,7 +27,7 @@ Esto es un candidato muy fuerte, no una garantía: se valida con ventas propias.
 La oferta de 2 pares es la que deja plata: empujala como "la más elegida".
 
 ## Proveedor
-1. **Argentina:** Dropi Argentina (app.dropi.com.ar). Buscá "plantillas", "plantilla ortopédica" o "fascitis". Elegí el proveedor con más stock, menos devoluciones y despacho en menos de 24 h. Pedí una muestra.
+1. **Argentina:** Dropi Argentina (registro en app.dropi.ar/auth/register, el enlace que da la web oficial dropi.co). Buscá "plantillas", "plantilla ortopédica" o "fascitis". Elegí el proveedor con más stock, menos devoluciones y despacho en menos de 24 h. Pedí una muestra.
 2. **Si Dropi no lo tiene:** comprá 50 a 100 pares en AliExpress o CJdropshipping y despachalos vos con Zipnova/Andreani, como ya hacés con Nací Reina.
 3. **Para ir a otros países:** Dropi también opera en México, Colombia, Chile y otros. Mismo producto, misma página cambiando precio y moneda.
 
