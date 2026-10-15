@@ -18,13 +18,13 @@ Esto es un candidato muy fuerte, no una garantía: se valida con ventas propias.
 ## Números (Argentina, a confirmar con Dropi)
 | Concepto | 1 par | 2 pares (oferta principal) |
 |---|---|---|
-| Precio de venta | $ 29.999 | $ 44.999 |
+| Precio de venta | $ 29.999 | $ 49.999 |
 | Producto (Dropi, Ventmar, ID 7625: $ 9.500 el par) + envío (estimado $ 6.000) | $ 15.500 | $ 25.000 |
 | Publicidad por venta (CPA estimado) | $ 9.000 | $ 9.000 |
 | Devoluciones y rechazos del contraentrega (~20 %) | $ 6.000 | $ 9.000 |
-| **Ganancia estimada** | **~$ 0** | **~$ 2.000** |
+| **Ganancia estimada** | **~$ 0** | **~$ 7.000** |
 
-Con el costo real de Dropi, el margen es finito: la oferta de 2 pares apenas gana y 1 par queda en cero si el CPA es $ 9.000. Para que deje plata hay que lograr un CPA de $ 6.000 o menos, o subir la oferta principal a 2 pares por $ 49.999. Confirmá el costo del envío con Dropi, que es el número que más mueve la cuenta.
+Con el costo real de Dropi, 1 par queda en cero: sirve como "ancla" para que el pack de 2 pares a $ 49.999 parezca la mejor compra. El negocio está en el pack de 2 (y 3 pares a $ 64.999, ~$ 12.000 de ganancia). Confirmá el costo del envío con Dropi, que es el número que más mueve la cuenta.
 
 La oferta de 2 pares es la que deja plata: empujala como "la más elegida".
 
@@ -49,7 +49,7 @@ Grabá con el celular, en vertical, de 15 a 30 segundos. Lo que más vende en es
 
 **Textos para el anuncio (elegí uno por anuncio):**
 - "¿Te duelen los pies al final del día? Las plantillas PisáBien tienen soporte de arco y talón con gel. Las ponés en tu calzado de siempre. 🚚 Envío gratis · 💵 Pagás cuando las recibís."
-- "Si trabajás muchas horas de pie, esto es para vos. 2 pares a $ 44.999, envío gratis y pago al recibir."
+- "Si trabajás muchas horas de pie, esto es para vos. 2 pares a $ 49.999, envío gratis y pago al recibir."
 - "Tus zapatillas de siempre, con otra comodidad. Recortás a tu talle y listo. 30 días para devolverlas."
 
 **Cómo arrancar la campaña** (cuando la página esté publicada):
