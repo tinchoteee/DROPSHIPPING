@@ -1,0 +1,100 @@
+<style>
+.pbw{--y:#F5C518;--b:#1f8fe8;--ink:#0b1d36;--mut:#5b6b80;--bg:#f6f8fb;background:#fff;color:var(--ink);font-family:inherit;padding:72px 20px}
+.pbw *{box-sizing:border-box}
+.pbw-in{max-width:1080px;margin:0 auto}
+.pbw-k{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--b);font-weight:800;text-align:center;margin-bottom:10px}
+.pbw-h{font-size:clamp(28px,4vw,46px);line-height:1.08;font-weight:800;text-align:center;margin:0 auto 14px;max-width:760px;color:var(--ink)}
+.pbw-sub{font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:var(--mut);text-align:center;max-width:640px;margin:0 auto 40px}
+.pbw-pains{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:72px}
+.pbw-pain{background:var(--bg);border-radius:18px;padding:22px 18px;text-align:left}
+.pbw-pain b{display:block;font-size:30px;margin-bottom:10px}
+.pbw-pain h3{font-size:17px;margin:0 0 6px;color:var(--ink)}
+.pbw-pain p{font-size:14px;line-height:1.45;color:var(--mut);margin:0}
+.pbw-why{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:72px}
+.pbw-why h2{font-size:clamp(24px,3vw,36px);line-height:1.12;margin:0 0 14px;color:var(--ink)}
+.pbw-why p{font-size:16px;line-height:1.6;color:var(--mut);margin:0 0 12px}
+.pbw-why img{width:100%;border-radius:22px;display:block;aspect-ratio:4/5;object-fit:cover}
+.pbw-cmp{border-radius:22px;overflow:hidden;border:1px solid #e4e9f0;margin-bottom:72px}
+.pbw-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;align-items:center;border-top:1px solid #e4e9f0}
+.pbw-row:first-child{border-top:0;background:var(--ink);color:#fff;font-weight:800}
+.pbw-row>div{padding:15px 18px;font-size:15px}
+.pbw-row>div:nth-child(3){background:rgba(245,197,24,.12);font-weight:700}
+.pbw-row:first-child>div:nth-child(3){background:var(--y);color:#111}
+.pbw-row .si{color:#12a150;font-weight:800}.pbw-row .no{color:#c0392b;font-weight:800}
+.pbw-who{text-align:center;margin-bottom:72px}
+.pbw-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px}
+.pbw-chips span{background:var(--bg);border:1px solid #e4e9f0;border-radius:999px;padding:10px 16px;font-size:15px;font-weight:600}
+.pbw-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:72px}
+.pbw-step{border:1px solid #e4e9f0;border-radius:18px;padding:22px}
+.pbw-step i{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-style:normal;font-weight:800;margin-bottom:10px}
+.pbw-step h3{font-size:17px;margin:0 0 6px;color:var(--ink)}.pbw-step p{font-size:14px;line-height:1.5;color:var(--mut);margin:0}
+.pbw-cta{background:linear-gradient(135deg,#0b1d36,#163f72);color:#fff;border-radius:26px;padding:44px 28px;text-align:center}
+.pbw-cta h2{font-size:clamp(26px,3.4vw,40px);margin:0 0 10px;color:#fff;line-height:1.1}
+.pbw-cta p{color:#c9d8ec;font-size:17px;margin:0 auto 22px;max-width:560px;line-height:1.5}
+.pbw-btn{display:inline-block;background:var(--y);color:#111;font-weight:800;padding:17px 32px;border-radius:999px;text-decoration:none;font-size:18px;box-shadow:0 10px 30px rgba(245,197,24,.35)}
+.pbw-trust{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:18px;font-size:14px;color:#c9d8ec}
+@media (max-width:749px){
+ .pbw{padding:52px 16px}
+ .pbw-pains{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:52px}
+ .pbw-pain{padding:16px 14px}.pbw-pain h3{font-size:15px}.pbw-pain p{font-size:13px}
+ .pbw-why{grid-template-columns:1fr;gap:22px;margin-bottom:52px}
+ .pbw-why img{aspect-ratio:4/3}
+ .pbw-row{grid-template-columns:1.3fr .8fr .9fr}.pbw-row>div{padding:12px 10px;font-size:13px}
+ .pbw-steps{grid-template-columns:1fr;margin-bottom:52px}
+ .pbw-cmp,.pbw-who{margin-bottom:52px}
+}
+</style>
+
+<section class="pbw" aria-label="Por qué elegir PisáBien">
+ <div class="pbw-in">
+  <div class="pbw-k">¿Te suena?</div>
+  <h2 class="pbw-h">Tus pies hacen todo el trabajo. Y nadie los cuida.</h2>
+  <p class="pbw-sub">Caminás, trabajás, hacés mandados, estás horas parado. Y al final del día lo primero que hacés al llegar es sacarte las zapatillas.</p>
+
+  <div class="pbw-pains">
+   <div class="pbw-pain"><b>🔥</b><h3>Talones que arden</h3><p>Cada pisada golpea siempre en el mismo lugar.</p></div>
+   <div class="pbw-pain"><b>🥵</b><h3>Llegás molido</h3><p>Los pies cansados te cambian el humor del día.</p></div>
+   <div class="pbw-pain"><b>🧱</b><h3>Suelas duras</h3><p>La plantilla que trae el calzado es una lámina finita.</p></div>
+   <div class="pbw-pain"><b>⏱️</b><h3>Horas de pie</h3><p>Trabajo, colectivo, cola del súper: todo suma.</p></div>
+  </div>
+
+  <div class="pbw-why">
+   <div>
+    <div class="pbw-k" style="text-align:left">El problema no son tus pies</div>
+    <h2>Es lo que tenés debajo</h2>
+    <p>Casi todo el calzado viene con una plantilla de espuma de pocos milímetros. Con el uso se aplasta y deja de amortiguar.</p>
+    <p>PisáBien la reemplaza por gel en el talón, una banda de soporte en el arco y puntos de gel en la planta. Es el mismo calzado que ya tenés, pero se siente distinto desde el primer paso.</p>
+    <p><b style="color:#0b1d36">No hace falta comprar zapatillas nuevas: cambiás lo de adentro.</b></p>
+   </div>
+   <img src="https://cdn.shopify.com/s/files/1/0804/1486/7645/files/closeup-ia-1.jpg?v=1792110424&width=900" alt="Plantilla de gel PisáBien colocándose en una zapatilla" loading="lazy">
+  </div>
+
+  <div class="pbw-cmp">
+   <div class="pbw-row"><div>Lo que pisás todo el día</div><div>Plantilla común</div><div>PisáBien</div></div>
+   <div class="pbw-row"><div>Gel en el talón</div><div class="no">✕</div><div class="si">✔ Sí</div></div>
+   <div class="pbw-row"><div>Soporte en el arco</div><div class="no">✕</div><div class="si">✔ Sí</div></div>
+   <div class="pbw-row"><div>Puntos de gel en la planta</div><div class="no">✕</div><div class="si">✔ Sí</div></div>
+   <div class="pbw-row"><div>Se recorta a tu talle</div><div>—</div><div class="si">✔ Del 35 al 45</div></div>
+   <div class="pbw-row"><div>Garantía</div><div>—</div><div class="si">✔ 30 días</div></div>
+  </div>
+
+  <div class="pbw-who">
+   <div class="pbw-k">Para quién son</div>
+   <h2 class="pbw-h" style="font-size:clamp(24px,3vw,36px)">Si pasás muchas horas de pie, son para vos</h2>
+   <div class="pbw-chips"><span>👩‍⚕️ Enfermería y salud</span><span>🛒 Comercio y cajas</span><span>🍽️ Gastronomía</span><span>💇 Peluquería</span><span>🏗️ Obra y depósito</span><span>👟 Caminatas</span><span>🚌 Viajes largos</span><span>🏫 Docentes</span></div>
+  </div>
+
+  <div class="pbw-steps">
+   <div class="pbw-step"><i>1</i><h3>Elegí tu talle</h3><p>Del 35 al 45. Llevando 2 o 3 pares podés elegir talles distintos para toda la familia.</p></div>
+   <div class="pbw-step"><i>2</i><h3>Te llega a tu casa</h3><p>Envío gratis a todo el país. Pagás con tarjeta, Mercado Pago o al recibir.</p></div>
+   <div class="pbw-step"><i>3</i><h3>Ponelas en 1 minuto</h3><p>Sacás la plantilla vieja, recortás si sobra y listo. Sirven en zapatillas, zapatos y botas.</p></div>
+  </div>
+
+  <div class="pbw-cta">
+   <h2>Probalas 30 días</h2>
+   <p>Si no notás la diferencia, nos escribís y te devolvemos la plata. Así de simple.</p>
+   <a class="pbw-btn" href="/products/plantillas-de-gel-pisabien">Quiero mis plantillas →</a>
+   <div class="pbw-trust"><span>🚚 Envío gratis</span><span>💳 Tarjeta, Mercado Pago o al recibir</span><span>🔁 30 días de garantía</span></div>
+  </div>
+ </div>
+</section>
