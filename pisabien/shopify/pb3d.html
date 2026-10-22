@@ -1,5 +1,5 @@
 <style>
-.pb3d{--pb-y:#F5C518;--pb-b:#1f8fe8;position:relative;height:460vh;background:radial-gradient(120% 80% at 70% 40%,#163f72 0%,#0b1d36 55%,#071426 100%);color:#fff;font-family:inherit}
+.pb3d{--pb-y:#F5C518;--pb-b:#1f8fe8;position:relative;height:340vh;contain:layout paint;background:radial-gradient(120% 80% at 70% 40%,#163f72 0%,#0b1d36 55%,#071426 100%);color:#fff;font-family:inherit}
 .pb3d *{box-sizing:border-box}
 .pb3d-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1200px;margin:0 auto;padding:0 24px}
 .pb3d-copy{position:relative;height:300px;z-index:2}
@@ -11,19 +11,19 @@
 .pb3d-btn{display:inline-block;margin-top:22px;background:var(--pb-y);color:#111;font-weight:800;padding:16px 28px;border-radius:999px;text-decoration:none;font-size:17px;box-shadow:0 10px 30px rgba(245,197,24,.35);width:max-content}
 .pb3d-btn:hover{transform:translateY(-2px)}
 .pb3d-stage{position:relative;height:100%;display:flex;align-items:center;justify-content:center;perspective:1400px}
-.pb3d-glow{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(31,143,232,.45),rgba(31,143,232,0) 65%);filter:blur(10px)}
+.pb3d-glow{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(31,143,232,.4),rgba(31,143,232,0) 68%)}
 .pb3d-obj{position:relative;width:min(240px,42vw);aspect-ratio:200/520;transform-style:preserve-3d;will-change:transform}
 .pb3d-l{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
 .pb3d-l svg{width:100%;height:100%;display:block;overflow:visible}
-.pb3d-shadow{position:absolute;bottom:8%;width:46%;height:22px;border-radius:50%;background:rgba(0,0,0,.55);filter:blur(14px)}
-.pb3d-tag{position:absolute;z-index:3;color:#fff;font-size:15px;font-weight:700;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px);padding:7px 12px;border-radius:999px;white-space:nowrap;opacity:0;transition:opacity .4s;pointer-events:none}
+.pb3d-shadow{position:absolute;bottom:8%;width:46%;height:30px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.6),rgba(0,0,0,0));will-change:transform,opacity}
+.pb3d-tag{position:absolute;z-index:3;color:#fff;font-size:15px;font-weight:700;background:rgba(11,29,54,.82);border:1px solid rgba(255,255,255,.25);padding:7px 12px;border-radius:999px;white-space:nowrap;opacity:0;transition:opacity .4s;pointer-events:none}
 .pb3d-tag.on{opacity:1}
 .pb3d-dots{position:absolute;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:3}
 .pb3d-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);transition:all .3s}
 .pb3d-dots i.on{background:var(--pb-y);height:22px;border-radius:5px}
 .pb3d-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#9fb6d3;transition:opacity .4s}
 @media (max-width:749px){
- .pb3d{height:420vh}
+ .pb3d{height:300vh}
  .pb3d-sticky{grid-template-columns:1fr;grid-template-rows:56% 44%;padding:0 20px}
  .pb3d-stage{grid-row:1}
  .pb3d-copy{grid-row:2;height:100%;align-self:start}
@@ -97,7 +97,7 @@
  var obj=document.getElementById('pb3dObj'),sh=document.getElementById('pb3dShadow'),hint=document.getElementById('pb3dHint');
  var layers=[].slice.call(sec.querySelectorAll('.pb3d-l')),steps=sec.querySelectorAll('.pb3d-step'),dots=sec.querySelectorAll('.pb3d-dots i'),tags=sec.querySelectorAll('.pb3d-tag');
  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- var cur=0,target=0,last=-1;
+ var cur=0,target=0,last=-1,raf=0,visible=false,hintOn=true;
  function clamp(v){return v<0?0:v>1?1:v}
  function seg(p,a,b){return clamp((p-a)/(b-a))}
  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
@@ -116,10 +116,13 @@
    for(var k=0;k<steps.length;k++){steps[k].classList.toggle('on',k===i);dots[k].classList.toggle('on',k===i)}
    for(var t=0;t<tags.length;t++){tags[t].classList.toggle('on',+tags[t].dataset.t===i)}
   }
-  hint.style.opacity=p>.05?0:1;
+  var h=p<=.05;if(h!==hintOn){hintOn=h;hint.style.opacity=h?1:0}
  }
- function loop(){cur+=(target-cur)*(reduce?1:.12);if(Math.abs(target-cur)<.0005)cur=target;render(cur);requestAnimationFrame(loop)}
- document.addEventListener('scroll',measure,{passive:true,capture:true});window.addEventListener('resize',measure);
- window.pb3dRender=render;measure();cur=target;loop();
+ // solo anima mientras la sección está en pantalla y hasta que se acomoda; el resto del tiempo no gasta nada
+ function loop(){raf=0;measure();var d=target-cur;cur=reduce||Math.abs(d)<.0008?target:cur+d*.2;render(cur);if(visible&&cur!==target)raf=requestAnimationFrame(loop)}
+ function kick(){if(visible&&!raf)raf=requestAnimationFrame(loop)}
+ if('IntersectionObserver' in window){new IntersectionObserver(function(es){visible=es[0].isIntersecting;kick()}).observe(sec)}else{visible=true}
+ document.addEventListener('scroll',kick,{passive:true,capture:true});window.addEventListener('resize',kick);
+ window.pb3dRender=render;measure();cur=target;render(cur);
 })();
 </script>
