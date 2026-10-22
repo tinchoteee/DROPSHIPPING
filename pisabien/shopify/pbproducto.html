@@ -54,6 +54,7 @@
 <script>
 (function(){
  function init(){
+  if(window.Shopify&&Shopify.designMode)return; // no tocar la página dentro del editor de temas
   var form=document.querySelector('form[action*="/cart/add"]');
   var qty=form&&(form.querySelector('input[name="quantity"]')||document.querySelector('input[name="quantity"]'));
   var btn=form&&form.querySelector('button[name="add"],button[type="submit"]');
