@@ -1,0 +1,98 @@
+<style>
+.pbp-packs{display:grid;gap:10px;margin:18px 0 6px}
+.pbp-packs-t{font-size:14px;font-weight:700;margin:0 0 2px}
+.pbp-pack{position:relative;display:flex;align-items:center;gap:12px;border:2px solid #e3e7ee;border-radius:14px;padding:14px 16px;cursor:pointer;background:#fff;transition:border-color .15s,box-shadow .15s;text-align:left;width:100%;font:inherit;color:inherit}
+.pbp-pack:hover{border-color:#b9c6d8}
+.pbp-pack.on{border-color:#1f8fe8;box-shadow:0 0 0 3px rgba(31,143,232,.15)}
+.pbp-dot{flex:0 0 20px;height:20px;border-radius:50%;border:2px solid #b9c6d8;display:grid;place-items:center}
+.pbp-pack.on .pbp-dot{border-color:#1f8fe8}
+.pbp-pack.on .pbp-dot::after{content:"";width:10px;height:10px;border-radius:50%;background:#1f8fe8}
+.pbp-info{flex:1;min-width:0}
+.pbp-name{font-weight:800;font-size:16px;display:block}
+.pbp-sub{font-size:13px;color:#5b6b80;display:block}
+.pbp-price{text-align:right;white-space:nowrap}
+.pbp-price b{display:block;font-size:17px}
+.pbp-price s{font-size:13px;color:#8a97a8}
+.pbp-badge{position:absolute;top:-10px;right:14px;background:#F5C518;color:#111;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;letter-spacing:.03em}
+.pbp-save{display:inline-block;margin-top:3px;font-size:12px;font-weight:700;color:#12a150;background:#e7f7ee;padding:2px 8px;border-radius:6px}
+.pbp-note{font-size:12.5px;color:#5b6b80;margin:4px 0 0}
+.pbp-trust{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 4px}
+.pbp-trust div{display:flex;gap:8px;align-items:flex-start;font-size:13px;line-height:1.35;background:#f6f8fb;border-radius:10px;padding:10px}
+.pbp-trust i{font-style:normal;font-size:17px;line-height:1}
+.pbp-eta{margin:10px 0 0;font-size:14px;background:#e7f7ee;color:#0c5c32;border-radius:10px;padding:10px 12px}
+.pbp-pay{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:12px;color:#5b6b80;align-items:center}
+.pbp-pay span{border:1px solid #e3e7ee;border-radius:6px;padding:3px 8px;background:#fff;font-weight:700;color:#334}
+.pbp-sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid #e3e7ee;box-shadow:0 -6px 20px rgba(0,0,0,.08);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:none;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s}
+.pbp-sticky.show{transform:none}
+.pbp-sticky .t{flex:1;min-width:0;font-size:13px;line-height:1.25}
+.pbp-sticky .t b{display:block;font-size:15px}
+.pbp-sticky button{background:#F5C518;color:#111;border:0;border-radius:999px;font-weight:800;font-size:15px;padding:13px 20px;cursor:pointer}
+@media (max-width:749px){.pbp-sticky{display:flex}}
+</style>
+
+<div id="pbpRoot" hidden>
+ <div class="pbp-packs" id="pbpPacks">
+  <p class="pbp-packs-t">Elegí tu pack</p>
+  <button type="button" class="pbp-pack" data-q="1"><span class="pbp-dot"></span><span class="pbp-info"><span class="pbp-name">1 par</span><span class="pbp-sub">Para probar</span></span><span class="pbp-price"><b>$ 29.999</b><s>$ 44.999</s></span></button>
+  <button type="button" class="pbp-pack on" data-q="2"><span class="pbp-badge">MÁS ELEGIDO</span><span class="pbp-dot"></span><span class="pbp-info"><span class="pbp-name">2 pares</span><span class="pbp-sub">$ 25.000 cada par</span><span class="pbp-save">Ahorrás $ 9.999</span></span><span class="pbp-price"><b>$ 49.999</b><s>$ 59.998</s></span></button>
+  <button type="button" class="pbp-pack" data-q="3"><span class="pbp-dot"></span><span class="pbp-info"><span class="pbp-name">3 pares</span><span class="pbp-sub">$ 21.666 cada par</span><span class="pbp-save">Ahorrás $ 24.998</span></span><span class="pbp-price"><b>$ 64.999</b><s>$ 89.997</s></span></button>
+  <p class="pbp-note">¿Talles distintos? Elegí un talle, agregalo al carrito y después agregá el otro: el descuento se aplica igual.</p>
+ </div>
+ <div id="pbpAfter">
+  <p class="pbp-eta" id="pbpEta">🚚 Pedí hoy y recibilo entre el <b id="pbpD1"></b> y el <b id="pbpD2"></b>. Envío gratis.</p>
+  <div class="pbp-trust">
+   <div><i>💵</i><span><b>Pagás al recibir</b><br>o con tarjeta / Mercado Pago</span></div>
+   <div><i>🔁</i><span><b>30 días de garantía</b><br>si no te convencen</span></div>
+   <div><i>✂️</i><span><b>Se recortan</b><br>a tu medida exacta</span></div>
+   <div><i>🔒</i><span><b>Compra segura</b><br>procesada por Mercado Pago</span></div>
+  </div>
+  <div class="pbp-pay">Pagás con: <span>VISA</span><span>Mastercard</span><span>AMEX</span><span>Mercado Pago</span><span>Efectivo al recibir</span></div>
+ </div>
+</div>
+<div class="pbp-sticky" id="pbpSticky"><span class="t"><b>Plantillas de gel</b><span id="pbpStickyTxt">2 pares · $ 49.999</span></span><button type="button" id="pbpStickyBtn">Comprar</button></div>
+
+<script>
+(function(){
+ function init(){
+  var form=document.querySelector('form[action*="/cart/add"]');
+  var qty=form&&(form.querySelector('input[name="quantity"]')||document.querySelector('input[name="quantity"]'));
+  var btn=form&&form.querySelector('button[name="add"],button[type="submit"]');
+  var root=document.getElementById('pbpRoot');
+  if(!form||!btn||!root){return setTimeout(init,400)}
+  if(root.dataset.done)return; root.dataset.done=1;
+  // talles en orden y sin la palabra TALLE
+  var picker=document.querySelector('variant-picker');
+  if(picker){
+   var labels=[].slice.call(picker.querySelectorAll('label'));
+   labels.forEach(function(l){ l.childNodes.forEach(function(n){ if(n.nodeType===3) n.textContent=n.textContent.replace(/TALLE\s*/i,'') }); var s=l.querySelector('span'); if(s) s.textContent=s.textContent.replace(/TALLE\s*/i,'') });
+   var items=labels.map(function(l){ var inp=document.getElementById(l.htmlFor)||l.previousElementSibling; return {l:l,i:inp,n:parseInt(l.textContent.replace(/\D/g,''),10)||0} }).filter(function(x){return x.i&&x.i.parentNode===x.l.parentNode});
+   if(items.length){ var par=items[0].l.parentNode; items.sort(function(a,b){return a.n-b.n}).forEach(function(x){ par.appendChild(x.i); par.appendChild(x.l) }) }
+  }
+  // packs encima del botón
+  var packs=document.getElementById('pbpPacks'), after=document.getElementById('pbpAfter');
+  var anchor=(qty&&qty.closest('.quantity-selector,quantity-selector-component,[class*=quantity]'))||btn;
+  anchor.parentNode.insertBefore(packs,anchor);
+  btn.parentNode.insertBefore(after,btn.nextSibling);
+  root.remove();
+  var names={1:'1 par · $ 29.999',2:'2 pares · $ 49.999',3:'3 pares · $ 64.999'};
+  function setQ(q){
+   [].forEach.call(packs.querySelectorAll('.pbp-pack'),function(p){p.classList.toggle('on',p.dataset.q==q)});
+   if(qty){ qty.value=q; qty.dispatchEvent(new Event('input',{bubbles:true})); qty.dispatchEvent(new Event('change',{bubbles:true})) }
+   document.getElementById('pbpStickyTxt').textContent=names[q]||'';
+  }
+  packs.addEventListener('click',function(e){var p=e.target.closest('.pbp-pack'); if(p) setQ(+p.dataset.q)});
+  setQ(2);
+  // fecha estimada (3 a 7 días hábiles)
+  function addBiz(d,n){d=new Date(d);while(n>0){d.setDate(d.getDate()+1);if(d.getDay()%6)n--}return d}
+  var f=new Intl.DateTimeFormat('es-AR',{weekday:'short',day:'numeric',month:'short'});
+  document.getElementById('pbpD1').textContent=f.format(addBiz(new Date(),3));
+  document.getElementById('pbpD2').textContent=f.format(addBiz(new Date(),7));
+  // barra fija en celular
+  var sticky=document.getElementById('pbpSticky');
+  document.body.appendChild(sticky);
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ sticky.classList.toggle('show',!es[0].isIntersecting && es[0].boundingClientRect.top<0) }).observe(btn) }
+  document.getElementById('pbpStickyBtn').addEventListener('click',function(){ btn.scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(function(){btn.click()},400) });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
