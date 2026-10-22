@@ -12,7 +12,7 @@
   var picker=document.querySelector('variant-picker');
   if(picker){
    var labels=[].slice.call(picker.querySelectorAll('label'));
-   labels.forEach(function(l){ l.childNodes.forEach(function(n){ if(n.nodeType===3) n.textContent=n.textContent.replace(/TALLE\s*/i,'') }); var s=l.querySelector('span'); if(s) s.textContent=s.textContent.replace(/TALLE\s*/i,'') });
+   labels.forEach(function(l){ var w=document.createTreeWalker(l,NodeFilter.SHOW_TEXT),n; while((n=w.nextNode())){ if(/TALLE/i.test(n.textContent)) n.textContent=n.textContent.replace(/TALLE\s*/ig,'') } });
    var items=labels.map(function(l){ var inp=document.getElementById(l.htmlFor)||l.previousElementSibling; return {l:l,i:inp,n:parseInt(l.textContent.replace(/\D/g,''),10)||0} }).filter(function(x){return x.i&&x.i.parentNode===x.l.parentNode});
    if(items.length){ var par=items[0].l.parentNode; items.sort(function(a,b){return a.n-b.n}).forEach(function(x){ par.appendChild(x.i); par.appendChild(x.l) }) }
   }
