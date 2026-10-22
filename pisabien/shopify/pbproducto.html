@@ -87,6 +87,14 @@
   var f=new Intl.DateTimeFormat('es-AR',{weekday:'short',day:'numeric',month:'short'});
   document.getElementById('pbpD1').textContent=f.format(addBiz(new Date(),3));
   document.getElementById('pbpD2').textContent=f.format(addBiz(new Date(),7));
+  // reseñas (Judge.me): widget debajo del producto
+  if(!document.querySelector('.jdgm-review-widget')){
+   var sec=btn.closest('.shopify-section')||btn.closest('section');
+   var pid=(window.ShopifyAnalytics&&ShopifyAnalytics.meta&&ShopifyAnalytics.meta.product&&ShopifyAnalytics.meta.product.id)||'15428491870397';
+   var rv=document.createElement('div'); rv.style.cssText='max-width:1100px;margin:40px auto;padding:0 20px';
+   rv.innerHTML='<div class="jdgm-widget jdgm-review-widget jdgm-outside-widget" data-id="'+pid+'"></div>';
+   if(sec&&sec.parentNode) sec.parentNode.insertBefore(rv,sec.nextSibling);
+  }
   // barra fija en celular
   var sticky=document.getElementById('pbpSticky');
   document.body.appendChild(sticky);
