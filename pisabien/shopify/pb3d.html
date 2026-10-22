@@ -101,7 +101,7 @@
  function clamp(v){return v<0?0:v>1?1:v}
  function seg(p,a,b){return clamp((p-a)/(b-a))}
  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
- function measure(){var r=sec.getBoundingClientRect(),h=sec.offsetHeight-window.innerHeight;target=clamp(-r.top/h)}
+ function measure(){var r=sec.getBoundingClientRect(),h=sec.offsetHeight-window.innerHeight;visible=r.bottom>0&&r.top<window.innerHeight;target=clamp(-r.top/h)}
  function render(p){
   var tilt=ease(seg(p,0,.18))*(1-ease(seg(p,.82,.97)));     // inclinación 3D
   var open=ease(seg(p,.16,.32))*(1-ease(seg(p,.76,.9)));    // separación de capas
@@ -119,9 +119,8 @@
   var h=p<=.05;if(h!==hintOn){hintOn=h;hint.style.opacity=h?1:0}
  }
  // solo anima mientras la sección está en pantalla y hasta que se acomoda; el resto del tiempo no gasta nada
- function loop(){raf=0;measure();var d=target-cur;cur=reduce||Math.abs(d)<.0008?target:cur+d*.2;render(cur);if(visible&&cur!==target)raf=requestAnimationFrame(loop)}
- function kick(){if(visible&&!raf)raf=requestAnimationFrame(loop)}
- if('IntersectionObserver' in window){new IntersectionObserver(function(es){visible=es[0].isIntersecting;kick()}).observe(sec)}else{visible=true}
+ function loop(){raf=0;measure();if(!visible){cur=target;return}var d=target-cur;cur=reduce||Math.abs(d)<.0008?target:cur+d*.2;render(cur);if(cur!==target)raf=requestAnimationFrame(loop)}
+ function kick(){if(!raf)raf=requestAnimationFrame(loop)}
  document.addEventListener('scroll',kick,{passive:true,capture:true});window.addEventListener('resize',kick);
  window.pb3dRender=render;measure();cur=target;render(cur);
 })();
