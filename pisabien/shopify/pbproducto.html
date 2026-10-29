@@ -32,24 +32,24 @@
 
 <div id="pbpRoot" hidden>
  <div class="pbp-packs" id="pbpPacks">
-  <p class="pbp-packs-t">Elegí tu pack</p>
-  <button type="button" class="pbp-pack" data-q="1"><span class="pbp-dot"></span><span class="pbp-info"><span class="pbp-name">1 par</span><span class="pbp-sub">Para probar</span></span><span class="pbp-price"><b>$ 29.999</b><s>$ 44.999</s></span></button>
-  <button type="button" class="pbp-pack on" data-q="2"><span class="pbp-badge">MÁS ELEGIDO</span><span class="pbp-dot"></span><span class="pbp-info"><span class="pbp-name">2 pares</span><span class="pbp-sub">$ 25.000 cada par</span><span class="pbp-save">Ahorrás $ 9.999</span></span><span class="pbp-price"><b>$ 49.999</b><s>$ 59.998</s></span></button>
-  <button type="button" class="pbp-pack" data-q="3"><span class="pbp-dot"></span><span class="pbp-info"><span class="pbp-name">3 pares</span><span class="pbp-sub">$ 21.666 cada par</span><span class="pbp-save">Ahorrás $ 24.998</span></span><span class="pbp-price"><b>$ 64.999</b><s>$ 89.997</s></span></button>
-  <p class="pbp-note">¿Talles distintos? Elegí un talle, agregalo al carrito y después agregá el otro: el descuento se aplica igual.</p>
+  <p class="pbp-packs-t">Elegí tu promo</p>
+  <button type="button" class="pbp-pack on" data-q="1"><span class="pbp-dot"></span><span class="pbp-info"><span class="pbp-name">1 masajeador</span><span class="pbp-sub">Para vos</span></span><span class="pbp-price"><b>$ 44.999</b><s>$ 69.999</s></span></button>
+  <button type="button" class="pbp-pack" data-q="2"><span class="pbp-badge">IDEAL PARA REGALAR</span><span class="pbp-dot"></span><span class="pbp-info"><span class="pbp-name">2 masajeadores</span><span class="pbp-sub">$ 40.000 cada uno · uno para regalar</span><span class="pbp-save">Ahorrás $ 9.999</span></span><span class="pbp-price"><b>$ 79.999</b><s>$ 89.998</s></span></button>
+  <button type="button" class="pbp-pack" data-q="3"><span class="pbp-dot"></span><span class="pbp-info"><span class="pbp-name">3 masajeadores</span><span class="pbp-sub">$ 36.666 cada uno · para toda la familia</span><span class="pbp-save">Ahorrás $ 24.998</span></span><span class="pbp-price"><b>$ 109.999</b><s>$ 134.997</s></span></button>
+  <p class="pbp-note">El descuento se aplica solo en el carrito.</p>
  </div>
  <div id="pbpAfter">
   <p class="pbp-eta" id="pbpEta">🚚 Pedí hoy y recibilo entre el <b id="pbpD1"></b> y el <b id="pbpD2"></b>. Envío gratis.</p>
   <div class="pbp-trust">
    <div><i>💵</i><span><b>Pagás al recibir</b><br>o con tarjeta / Mercado Pago</span></div>
    <div><i>🔁</i><span><b>30 días de garantía</b><br>si no te convencen</span></div>
-   <div><i>✂️</i><span><b>Se recortan</b><br>a tu medida exacta</span></div>
+   <div><i>🔋</i><span><b>Recargable USB</b><br>lo usás donde quieras</span></div>
    <div><i>🔒</i><span><b>Compra segura</b><br>procesada por Mercado Pago</span></div>
   </div>
   <div class="pbp-pay">Pagás con: <span>VISA</span><span>Mastercard</span><span>AMEX</span><span>Mercado Pago</span><span>Efectivo al recibir</span></div>
  </div>
 </div>
-<div class="pbp-sticky" id="pbpSticky"><span class="t"><b>Plantillas de gel</b><span id="pbpStickyTxt">2 pares · $ 49.999</span></span><button type="button" id="pbpStickyBtn">Comprar</button></div>
+<div class="pbp-sticky" id="pbpSticky"><span class="t"><b>Masajeador de cuello</b><span id="pbpStickyTxt">1 masajeador · $ 44.999</span></span><button type="button" id="pbpStickyBtn">Comprar</button></div>
 
 <script>
 (function(){
@@ -75,14 +75,14 @@
   anchor.parentNode.insertBefore(packs,anchor);
   btn.parentNode.insertBefore(after,btn.nextSibling);
   root.remove();
-  var names={1:'1 par · $ 29.999',2:'2 pares · $ 49.999',3:'3 pares · $ 64.999'};
+  var names={1:'1 masajeador · $ 44.999',2:'2 masajeadores · $ 79.999',3:'3 masajeadores · $ 109.999'};
   function setQ(q){
    [].forEach.call(packs.querySelectorAll('.pbp-pack'),function(p){p.classList.toggle('on',p.dataset.q==q)});
    if(qty){ qty.value=q; qty.dispatchEvent(new Event('input',{bubbles:true})); qty.dispatchEvent(new Event('change',{bubbles:true})) }
    document.getElementById('pbpStickyTxt').textContent=names[q]||'';
   }
   packs.addEventListener('click',function(e){var p=e.target.closest('.pbp-pack'); if(p) setQ(+p.dataset.q)});
-  setQ(2);
+  setQ(1);
   // fecha estimada (3 a 7 días hábiles)
   function addBiz(d,n){d=new Date(d);while(n>0){d.setDate(d.getDate()+1);if(d.getDay()%6)n--}return d}
   var f=new Intl.DateTimeFormat('es-AR',{weekday:'short',day:'numeric',month:'short'});

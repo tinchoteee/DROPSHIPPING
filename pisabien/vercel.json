@@ -1,6 +1,6 @@
 {
   "redirects": [
-    { "source": "/((?!x/).*)", "destination": "https://hdeca0-xq.myshopify.com/products/plantillas-de-gel-pisabien", "permanent": false }
+    { "source": "/((?!x/).*)", "destination": "https://hdeca0-xq.myshopify.com/products/masajeador-de-cuello-con-calor", "permanent": false }
   ],
   "headers": [
     { "source": "/x/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=300" }, { "key": "Access-Control-Allow-Origin", "value": "*" } ] }
